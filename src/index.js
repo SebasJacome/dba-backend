@@ -1,11 +1,12 @@
 import express from 'express'
-
+import {config} from 'dotenv'
 import countriesRoutes from './routes/countrycode.routes.js'
 import indexRoutes from './routes/index.routes.js'
 
 const app = express()
 
-
+config()
+const PORT = process.env.PORT || 3000
 app.use(indexRoutes)
 app.use('/api', countriesRoutes)
 
@@ -15,5 +16,5 @@ app.use((req, res, next) => {
     })
 })
 
-app.listen(3000)
-console.log('Server on port 3000')
+app.listen(PORT)
+console.log('Server on port', PORT)
