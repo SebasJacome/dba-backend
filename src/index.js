@@ -9,5 +9,11 @@ const app = express()
 app.use(indexRoutes)
 app.use('/api', countriesRoutes)
 
+app.use((req, res, next) => {
+    res.status(404).json({
+        message: 'Endpoint Not found'
+    })
+})
+
 app.listen(3000)
 console.log('Server on port 3000')
