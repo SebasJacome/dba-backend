@@ -9,5 +9,5 @@ export const pool = createPool({
     user: process.env.MYSQL_USER,
     password: process.env.MYSQL_PASSWORD,
     port: process.env.MYSQL_PORT,
-    database: 'worlddata',
+    database: process.env.MYSQL_DATABASE,
 })
