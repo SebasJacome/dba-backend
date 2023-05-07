@@ -1,7 +1,7 @@
 import { Router } from 'express'
-
+import { getCountryCodes } from '../controllers/countrycode.controllers.js'
 const router = Router()
 
-router.get('/countrycode', (req, res) => res.send('Obteniendo Country Codes'))
+router.get('/countrycode', getCountryCodes)
 
 export default router

@@ -1,0 +1,1 @@
+export const getCountryCodes = (req, res) => res.send('Obteniendo Country Codes')
