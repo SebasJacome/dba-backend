@@ -1,4 +1,5 @@
 import express from 'express'
+import cors from 'cors'
 import {config} from 'dotenv'
 import countriesRoutes from './routes/countrycode.routes.js'
 import gdpRoutes from './routes/gdp.routes.js'
@@ -8,6 +9,9 @@ const app = express()
 
 config()
 const PORT = process.env.PORT || 3000
+
+app.use(cors())
+
 app.use(indexRoutes)
 app.use('/api', countriesRoutes)
 app.use('/api', gdpRoutes)
