@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { getPopulation, getSurfaceArea} from '../controllers/worldinfo.controllers.js'
+import { getPopulation, getSurfaceArea, getGDP, getEmployment} from '../controllers/worldinfo.controllers.js'
 const router = Router()
 
 router.get('/population', getPopulation)
