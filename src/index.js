@@ -5,6 +5,9 @@ import countriesRoutes from './routes/countrycode.routes.js'
 import gdpRoutes from './routes/gdp.routes.js'
 import indexRoutes from './routes/index.routes.js'
 import worldinfoRoutes from './routes/worldinfo.routes.js'
+import employmentRoutes from './routes/employment.routes.js'
+import geographyRoutes from './routes/geography.routes.js'
+import populationRoutes from './routes/population.routes.js'
 
 const app = express()
 
@@ -17,6 +20,10 @@ app.use(indexRoutes)
 app.use('/api', countriesRoutes)
 app.use('/api', gdpRoutes)
 app.use('/api', worldinfoRoutes)
+app.use('/api', employmentRoutes)
+app.use('/api', geographyRoutes)
+app.use('/api', populationRoutes)
+
 
 app.use((req, res, next) => {
     res.status(404).json({
