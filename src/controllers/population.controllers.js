@@ -2,7 +2,7 @@ import {pool} from '../db.js'
 
 export const getPopulation_LifeExpectancy = async (req, res) => {
     try{
-        const [rows] = await pool.query('select CountryCode, CountryName, LifeExpectancy from countrycode natural join population where LifeExpectancy IS NOT NULL;')
+        const [rows] = await pool.query('select CountryCode, CountryName, LifeExpectancy from countrycode natural join population where LifeExpectancy IS NOT NULL order by LifeExpectancy desc;')
         res.json(rows)
     }
     catch(error){
